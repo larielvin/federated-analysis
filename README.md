@@ -161,3 +161,4 @@ PRIVATE_KEY="<YOUR_BLOCKCHAIN_PRIVATE_KEY>"   # with test POL balance because sm
 RPC_URL="https://rpc-amoy.polygon.technology"
 PINATA_JWT_UPLOAD="<YOUR_PINATA_JWT>"         # with write priviledges
 ```
+- Rerun the above make commands from the directory `/home/ubuntu/analysis` in the server.
