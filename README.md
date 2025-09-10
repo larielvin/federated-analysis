@@ -153,11 +153,11 @@ This will provision the AWS server, install all dependencies, run the make comma
   make party-collect
   ```
 ## Blockchain and IPFS anchoring
-- The above will deploy the whole project while skipping blockchain and IPFS pinning.
-- To setup this stage, log into the ec2 instance and move to the directory /home/ubuntu/analysis/fed-analysis-keys
+The above will deploy the whole project while skipping blockchain and IPFS pinning. To setup anchoring:
+- log into the ec2 instance and move to the directory /home/ubuntu/analysis/fed-analysis-keys
 - Rename the `.env.example` to `.env` then update the below keys:
-
-* PRIVATE_KEY="<YOUR_BLOCKCHAIN_PRIVATE_KEY>"   # with test POL balance because smart contract is deployed on Polygon Amoy
-* RPC_URL="https://rpc-amoy.polygon.technology"
-* PINATA_JWT_UPLOAD="<YOUR_PINATA_JWT>"         # with write priviledges
-
+```
+PRIVATE_KEY="<YOUR_BLOCKCHAIN_PRIVATE_KEY>"   # with test POL balance because smart contract is deployed on Polygon Amoy
+RPC_URL="https://rpc-amoy.polygon.technology"
+PINATA_JWT_UPLOAD="<YOUR_PINATA_JWT>"         # with write priviledges
+```
