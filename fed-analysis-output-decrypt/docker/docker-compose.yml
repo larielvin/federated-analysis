@@ -1,0 +1,19 @@
+
+services:
+
+  decrypt-app:
+    build:
+      context: ../
+    container_name: decrypt-app
+    restart: unless-stopped
+    volumes:
+      - ../server_results:/app/server_results
+      - ../.fhe_keys:/app/.fhe_keys
+    logging:
+      driver: json-file
+      options:
+        max-size: "5m"
+        max-file: "3"
+    environment:
+      PYTHONUNBUFFERED: 1
+    command: sh -c "exec python decrypt.py"

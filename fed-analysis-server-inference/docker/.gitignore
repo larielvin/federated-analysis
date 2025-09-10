@@ -1,0 +1,17 @@
+# Virtual Environment 
+.venv
+
+# Python cache
+__pycache__
+
+# VS Code
+.vscode
+
+.DS_Store
+
+# Cocnrete Python artifacts
+.artifacts
+
+# Experiments
+experiments
+mlir

@@ -1,0 +1,22 @@
+
+services:
+
+  encrypt-app:
+    build:
+      context: ../
+    container_name: encrypt-app
+    restart: unless-stopped
+    volumes:
+      - ../client_files:/app/client_files
+      - ../.fhe_keys:/app/.fhe_keys
+      # - ../sample_input_good.json:/app/sample_input.json
+      - ../sample_input_bad.json:/app/sample_input.json
+    logging:
+      driver: json-file
+      options:
+        max-size: "5m"
+        max-file: "3"
+    environment:
+      PYTHONUNBUFFERED: 1
+      ROWS_JSON: /app/sample_input.json
+    command: sh -c "exec python encrypt_data.py"

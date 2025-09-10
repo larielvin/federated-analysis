@@ -1,0 +1,362 @@
+{
+  "parties": [
+    "agritech",
+    "bank",
+    "processor",
+    "insurance",
+    "government"
+  ],
+  "target": "default_or_claim",
+  "train_size": 2000,
+  "test_size": 500,
+  "max_depth": 3,
+  "timing": {
+    "train_time_s": 0.1520676612854004,
+    "compile_time_s": 2.91474986076355,
+    "plaintext_total_time_s": 0.0032541751861572266,
+    "plaintext_latency_per_sample_s": 6.508350372314453e-06,
+    "fhe_total_time_s": 235.34367632865906,
+    "fhe_latency_per_sample_s": 0.4706873526573181
+  },
+  "metrics": {
+    "plaintext_metrics": {
+      "accuracy": 0.734,
+      "precision": 0.13043478260869565,
+      "recall": 0.5806451612903226,
+      "f1_score": 0.21301775147928992,
+      "confusion_matrix": [
+        [
+          349,
+          120
+        ],
+        [
+          13,
+          18
+        ]
+      ],
+      "total_time_s": 0.0032541751861572266,
+      "latency_per_sample_s": 6.508350372314453e-06
+    },
+    "fhe_metrics": {
+      "accuracy": 0.734,
+      "precision": 0.13043478260869565,
+      "recall": 0.5806451612903226,
+      "f1_score": 0.21301775147928992,
+      "confusion_matrix": [
+        [
+          349,
+          120
+        ],
+        [
+          13,
+          18
+        ]
+      ],
+      "total_time_s": 235.34367632865906,
+      "latency_per_sample_s": 0.4706873526573181,
+      "compile_time_s": 2.91474986076355
+    }
+  },
+  "group_columns": {
+    "agritech": {
+      "numeric": [
+        "farm_area_ha",
+        "input_cost_kes",
+        "agritech_score",
+        "mpesa_txn_count_90d",
+        "mpesa_inflow_kes_90d",
+        "eo_ndvi_gs"
+      ],
+      "categorical": [
+        "crop_primary",
+        "crop_secondary"
+      ],
+      "boolean": [
+        "irrigated"
+      ]
+    },
+    "bank": {
+      "numeric": [
+        "loan_amount_kes",
+        "tenor_months",
+        "interest_rate_pct"
+      ],
+      "categorical": [],
+      "boolean": [
+        "prior_default"
+      ]
+    },
+    "processor": {
+      "numeric": [
+        "yield_t_ha",
+        "sales_kes"
+      ],
+      "categorical": [],
+      "boolean": [
+        "processor_contract"
+      ]
+    },
+    "insurance": {
+      "numeric": [
+        "climate_risk_index"
+      ],
+      "categorical": [],
+      "boolean": [
+        "insured"
+      ]
+    },
+    "government": {
+      "numeric": [
+        "rain_mm_gs",
+        "soil_quality_index"
+      ],
+      "categorical": [
+        "county"
+      ],
+      "boolean": [
+        "gov_subsidy"
+      ]
+    }
+  },
+  "preprocessors": {
+    "agritech": "/home/ubuntu/analysis/fed-analysis-train/output/model/preprocessor_agritech.pkl",
+    "bank": "/home/ubuntu/analysis/fed-analysis-train/output/model/preprocessor_bank.pkl",
+    "processor": "/home/ubuntu/analysis/fed-analysis-train/output/model/preprocessor_processor.pkl",
+    "insurance": "/home/ubuntu/analysis/fed-analysis-train/output/model/preprocessor_insurance.pkl",
+    "government": "/home/ubuntu/analysis/fed-analysis-train/output/model/preprocessor_government.pkl"
+  },
+  "features": {
+    "party_order": [
+      "agritech",
+      "bank",
+      "processor",
+      "insurance",
+      "government"
+    ],
+    "total_feature_width": 90,
+    "global_feature_names_out": [
+      "agritech:farm_area_ha",
+      "agritech:input_cost_kes",
+      "agritech:agritech_score",
+      "agritech:mpesa_txn_count_90d",
+      "agritech:mpesa_inflow_kes_90d",
+      "agritech:eo_ndvi_gs",
+      "agritech:crop_primary_beans",
+      "agritech:crop_primary_coffee",
+      "agritech:crop_primary_dairy-fodder",
+      "agritech:crop_primary_horticulture",
+      "agritech:crop_primary_maize",
+      "agritech:crop_primary_millet",
+      "agritech:crop_primary_potato",
+      "agritech:crop_primary_rice",
+      "agritech:crop_primary_sorghum",
+      "agritech:crop_primary_sugarcane",
+      "agritech:crop_primary_tea",
+      "agritech:crop_primary_wheat",
+      "agritech:crop_secondary_beans",
+      "agritech:crop_secondary_coffee",
+      "agritech:crop_secondary_dairy-fodder",
+      "agritech:crop_secondary_horticulture",
+      "agritech:crop_secondary_maize",
+      "agritech:crop_secondary_millet",
+      "agritech:crop_secondary_potato",
+      "agritech:crop_secondary_rice",
+      "agritech:crop_secondary_sorghum",
+      "agritech:crop_secondary_sugarcane",
+      "agritech:crop_secondary_tea",
+      "agritech:crop_secondary_wheat",
+      "agritech:irrigated",
+      "bank:loan_amount_kes",
+      "bank:tenor_months",
+      "bank:interest_rate_pct",
+      "bank:prior_default",
+      "processor:yield_t_ha",
+      "processor:sales_kes",
+      "processor:processor_contract",
+      "insurance:climate_risk_index",
+      "insurance:insured",
+      "government:rain_mm_gs",
+      "government:soil_quality_index",
+      "government:county_Baringo",
+      "government:county_Bomet",
+      "government:county_Bungoma",
+      "government:county_Busia",
+      "government:county_Elgeyo-Marakwet",
+      "government:county_Embu",
+      "government:county_Garissa",
+      "government:county_Homa Bay",
+      "government:county_Isiolo",
+      "government:county_Kajiado",
+      "government:county_Kakamega",
+      "government:county_Kericho",
+      "government:county_Kiambu",
+      "government:county_Kilifi",
+      "government:county_Kirinyaga",
+      "government:county_Kisii",
+      "government:county_Kisumu",
+      "government:county_Kitui",
+      "government:county_Kwale",
+      "government:county_Laikipia",
+      "government:county_Lamu",
+      "government:county_Machakos",
+      "government:county_Makueni",
+      "government:county_Mandera",
+      "government:county_Marsabit",
+      "government:county_Meru",
+      "government:county_Migori",
+      "government:county_Mombasa",
+      "government:county_Murang'a",
+      "government:county_Nairobi",
+      "government:county_Nakuru",
+      "government:county_Nandi",
+      "government:county_Narok",
+      "government:county_Nyamira",
+      "government:county_Nyandarua",
+      "government:county_Nyeri",
+      "government:county_Samburu",
+      "government:county_Siaya",
+      "government:county_Taita-Taveta",
+      "government:county_Tana River",
+      "government:county_Tharaka-Nithi",
+      "government:county_Trans Nzoia",
+      "government:county_Turkana",
+      "government:county_Uasin Gishu",
+      "government:county_Vihiga",
+      "government:county_Wajir",
+      "government:county_West Pokot",
+      "government:gov_subsidy"
+    ],
+    "per_party_features": {
+      "agritech": {
+        "slice": [
+          0,
+          31
+        ],
+        "feature_names_out": [
+          "farm_area_ha",
+          "input_cost_kes",
+          "agritech_score",
+          "mpesa_txn_count_90d",
+          "mpesa_inflow_kes_90d",
+          "eo_ndvi_gs",
+          "crop_primary_beans",
+          "crop_primary_coffee",
+          "crop_primary_dairy-fodder",
+          "crop_primary_horticulture",
+          "crop_primary_maize",
+          "crop_primary_millet",
+          "crop_primary_potato",
+          "crop_primary_rice",
+          "crop_primary_sorghum",
+          "crop_primary_sugarcane",
+          "crop_primary_tea",
+          "crop_primary_wheat",
+          "crop_secondary_beans",
+          "crop_secondary_coffee",
+          "crop_secondary_dairy-fodder",
+          "crop_secondary_horticulture",
+          "crop_secondary_maize",
+          "crop_secondary_millet",
+          "crop_secondary_potato",
+          "crop_secondary_rice",
+          "crop_secondary_sorghum",
+          "crop_secondary_sugarcane",
+          "crop_secondary_tea",
+          "crop_secondary_wheat",
+          "irrigated"
+        ]
+      },
+      "bank": {
+        "slice": [
+          31,
+          35
+        ],
+        "feature_names_out": [
+          "loan_amount_kes",
+          "tenor_months",
+          "interest_rate_pct",
+          "prior_default"
+        ]
+      },
+      "processor": {
+        "slice": [
+          35,
+          38
+        ],
+        "feature_names_out": [
+          "yield_t_ha",
+          "sales_kes",
+          "processor_contract"
+        ]
+      },
+      "insurance": {
+        "slice": [
+          38,
+          40
+        ],
+        "feature_names_out": [
+          "climate_risk_index",
+          "insured"
+        ]
+      },
+      "government": {
+        "slice": [
+          40,
+          90
+        ],
+        "feature_names_out": [
+          "rain_mm_gs",
+          "soil_quality_index",
+          "county_Baringo",
+          "county_Bomet",
+          "county_Bungoma",
+          "county_Busia",
+          "county_Elgeyo-Marakwet",
+          "county_Embu",
+          "county_Garissa",
+          "county_Homa Bay",
+          "county_Isiolo",
+          "county_Kajiado",
+          "county_Kakamega",
+          "county_Kericho",
+          "county_Kiambu",
+          "county_Kilifi",
+          "county_Kirinyaga",
+          "county_Kisii",
+          "county_Kisumu",
+          "county_Kitui",
+          "county_Kwale",
+          "county_Laikipia",
+          "county_Lamu",
+          "county_Machakos",
+          "county_Makueni",
+          "county_Mandera",
+          "county_Marsabit",
+          "county_Meru",
+          "county_Migori",
+          "county_Mombasa",
+          "county_Murang'a",
+          "county_Nairobi",
+          "county_Nakuru",
+          "county_Nandi",
+          "county_Narok",
+          "county_Nyamira",
+          "county_Nyandarua",
+          "county_Nyeri",
+          "county_Samburu",
+          "county_Siaya",
+          "county_Taita-Taveta",
+          "county_Tana River",
+          "county_Tharaka-Nithi",
+          "county_Trans Nzoia",
+          "county_Turkana",
+          "county_Uasin Gishu",
+          "county_Vihiga",
+          "county_Wajir",
+          "county_West Pokot",
+          "gov_subsidy"
+        ]
+      }
+    }
+  }
+}

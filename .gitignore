@@ -1,0 +1,24 @@
+# Virtual Environment 
+.venv
+
+# Python cache
+__pycache__
+
+# VS Code
+.vscode
+
+# Cocnrete Python artifacts
+.artifacts
+
+.DS_Store
+
+# Experiments
+experiments
+mlir
+
+.collector.pid
+.collector.log
+
+keys-app.eif
+eif_pcr0.txt
+.env

@@ -1,0 +1,96 @@
+{
+  "agritech": {
+    "farm_area_ha": 3.2,
+    "input_cost_kes": 60000,
+    "agritech_score": 0.92,
+    "mpesa_txn_count_90d": 150,
+    "mpesa_inflow_kes_90d": 600000,
+    "eo_ndvi_gs": 0.72,
+    "crop_primary": "maize",
+    "crop_secondary": "beans",
+    "irrigated": 1
+  },
+  "bank": {
+    "loan_amount_kes": 80000,
+    "tenor_months": 6,
+    "interest_rate_pct": 9.0,
+    "prior_default": 0
+  },
+  "processor": {
+    "yield_t_ha": 3.9,
+    "sales_kes": 400000,
+    "processor_contract": 1
+  },
+  "insurance": {
+    "climate_risk_index": 0.15,
+    "insured": 1
+  },
+  "government": {
+    "rain_mm_gs": 650.0,
+    "soil_quality_index": 0.75,
+    "county": "Uasin Gishu",
+    "gov_subsidy": 1
+  }
+}
+
+
+make party-encrypt-data
+docker compose -f ./fed-analysis-data-encrypt/docker/docker-compose.yml run --rm --service-ports encrypt-app
+[info] Using rows JSON: /app/sample_input.json
+[agritech] client_id=387870567 → encrypted_inputs_agritech (508416 bytes) | slice=0:31 (total=90)
+[bank] client_id=387870567 → encrypted_inputs_bank (65832 bytes) | slice=31:35 (total=90)
+[processor] client_id=387870567 → encrypted_inputs_processor (49440 bytes) | slice=35:38 (total=90)
+[insurance] client_id=387870567 → encrypted_inputs_insurance (33048 bytes) | slice=38:40 (total=90)
+[government] client_id=387870567 → encrypted_inputs_government (819864 bytes) | slice=40:90 (total=90)
+
+[Encryption cycle timing]
+  start_utc : 2025-09-03T16:51:28.759755+00:00
+  end_utc   : 2025-09-03T16:51:34.829449+00:00
+  elapsed_s : 6.070
+
+[Encrypted payload sizes & per-party throughput]
+  agritech  : 508416 bytes | t=1.987s | thr=255,902 B/s (0.24 MiB/s)
+  bank      : 65832 bytes | t=1.019s | thr=64,577 B/s (0.06 MiB/s)
+  processor : 49440 bytes | t=1.014s | thr=48,763 B/s (0.05 MiB/s)
+  insurance : 33048 bytes | t=1.013s | thr=32,625 B/s (0.03 MiB/s)
+  government: 819864 bytes | t=1.036s | thr=791,200 B/s (0.75 MiB/s)
+
+[Overall]
+  total_bytes : 1476600 bytes (~1.41 MiB)
+  throughput  : 243,274 B/s (0.23 MiB/s)
+
+  
+
+make server-inference
+docker compose -f ./fed-analysis-server-inference/docker/docker-compose.yml run --rm --service-ports inference-app
+{
+  "client_id": "387870567",
+  "parties": [
+    "agritech",
+    "bank",
+    "processor",
+    "insurance",
+    "government"
+  ],
+  "n_inputs": 5,
+  "inbox": "/app/server_files/387870567",
+  "outbox": "/app/server_results/387870567",
+  "fhe_time_s": 2.85,
+  "output_file": "/app/server_results/387870567/encrypted_output",
+  "output_size_bytes": 33056
+}
+
+make party-decrypt
+docker compose -f ./fed-analysis-output-decrypt/docker/docker-compose.yml run --rm --service-ports decrypt-app
+{
+  "client_id": "387870567",
+  "pred_label": 0,
+  "scores": [
+    1.0,
+    0.0
+  ],
+  "positive_class_proba": 0.0,
+  "verdict": "default_or_claim: no adverse event predicted (default/claim = 0)",
+  "note": "label 1 means default_or_claim event; label 0 means no event",
+  "decryption_time": 1.26
+}

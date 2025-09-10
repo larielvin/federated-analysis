@@ -1,0 +1,32 @@
+# Virtual Environment 
+.venv
+
+# Python cache
+__pycache__
+
+# VS Code
+.vscode
+
+,DS_Store
+
+# Cocnrete Python artifacts
+.artifacts
+
+# Client-server related files
+.fhe_keys
+client_files
+server_files
+evaluation_keys
+
+# Experiments
+experiments
+mlir
+
+age_files
+.collector.log
+
+trust
+.vendor
+
+download
+.env

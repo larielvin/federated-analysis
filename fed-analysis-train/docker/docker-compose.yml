@@ -1,0 +1,23 @@
+
+services:
+
+  training-app:
+    build:
+      context: ../
+    container_name: training-app
+    restart: unless-stopped
+    volumes:
+      - ../output:/app/output
+      - sklearn_cache:/app/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "5m"
+        max-file: "3"
+    environment:
+      PYTHONUNBUFFERED: 1
+      SCIKIT_LEARN_DATA: /app/data
+    command: sh -c "exec python training.py"
+  
+volumes:
+    sklearn_cache:

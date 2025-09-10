@@ -1,0 +1,503 @@
+{
+  "logreg": {
+    "logreg_sklearn_plaintext": {
+      "label": "logreg_sklearn_plaintext",
+      "accuracy": 0.744,
+      "precision": 0.14074074074074075,
+      "recall": 0.6129032258064516,
+      "f1": 0.22891566265060243,
+      "confusion_matrix": [
+        [
+          353,
+          116
+        ],
+        [
+          12,
+          19
+        ]
+      ],
+      "roc_auc": 0.7279730380356284,
+      "total_time_s": 0.00031638145446777344,
+      "num_samples": 500,
+      "latency_per_sample_s": 6.327629089355469e-07
+    },
+    "logreg_clear_quantized": {
+      "label": "logreg_clear_quantized",
+      "accuracy": 0.742,
+      "precision": 0.13970588235294118,
+      "recall": 0.6129032258064516,
+      "f1": 0.2275449101796407,
+      "confusion_matrix": [
+        [
+          352,
+          117
+        ],
+        [
+          12,
+          19
+        ]
+      ],
+      "roc_auc": 0.7282137698603756,
+      "total_time_s": 0.000453948974609375,
+      "num_samples": 500,
+      "latency_per_sample_s": 9.0789794921875e-07
+    },
+    "logreg_compile_time_s": 0.2436678409576416,
+    "logreg_fhe_simulate": {
+      "label": "logreg_fhe_simulate",
+      "accuracy": 0.742,
+      "precision": 0.13970588235294118,
+      "recall": 0.6129032258064516,
+      "f1": 0.2275449101796407,
+      "confusion_matrix": [
+        [
+          352,
+          117
+        ],
+        [
+          12,
+          19
+        ]
+      ],
+      "roc_auc": 0.7282137698603756,
+      "total_time_s": 2.2220141887664795,
+      "num_samples": 500,
+      "latency_per_sample_s": 0.004444028377532959
+    },
+    "logreg_fhe_execute": {
+      "label": "logreg_fhe_execute_all_500",
+      "accuracy": 0.742,
+      "precision": 0.13970588235294118,
+      "recall": 0.6129032258064516,
+      "f1": 0.2275449101796407,
+      "confusion_matrix": [
+        [
+          352,
+          117
+        ],
+        [
+          12,
+          19
+        ]
+      ],
+      "total_time_s": 10.500032901763916,
+      "num_samples": 500,
+      "latency_per_sample_s": 0.021000065803527833,
+      "compile_time_s": 0.2436678409576416
+    }
+  },
+  "linear_svm": {
+    "linear_svm_sklearn_plaintext": {
+      "label": "linear_svm_sklearn_plaintext",
+      "accuracy": 0.748,
+      "precision": 0.14814814814814814,
+      "recall": 0.6451612903225806,
+      "f1": 0.24096385542168672,
+      "confusion_matrix": [
+        [
+          354,
+          115
+        ],
+        [
+          11,
+          20
+        ]
+      ],
+      "roc_auc": 0.7210262053786368,
+      "total_time_s": 0.00042939186096191406,
+      "num_samples": 500,
+      "latency_per_sample_s": 8.587837219238281e-07
+    },
+    "linear_svm_clear_quantized": {
+      "label": "linear_svm_clear_quantized",
+      "accuracy": 0.748,
+      "precision": 0.14814814814814814,
+      "recall": 0.6451612903225806,
+      "f1": 0.24096385542168672,
+      "confusion_matrix": [
+        [
+          354,
+          115
+        ],
+        [
+          11,
+          20
+        ]
+      ],
+      "roc_auc": 0.7215076690281311,
+      "total_time_s": 0.0005297660827636719,
+      "num_samples": 500,
+      "latency_per_sample_s": 1.0595321655273437e-06
+    },
+    "linear_svm_compile_time_s": 0.21754956245422363,
+    "linear_svm_fhe_simulate": {
+      "label": "linear_svm_fhe_simulate",
+      "accuracy": 0.748,
+      "precision": 0.14814814814814814,
+      "recall": 0.6451612903225806,
+      "f1": 0.24096385542168672,
+      "confusion_matrix": [
+        [
+          354,
+          115
+        ],
+        [
+          11,
+          20
+        ]
+      ],
+      "roc_auc": 0.7215076690281311,
+      "total_time_s": 1.3483874797821045,
+      "num_samples": 500,
+      "latency_per_sample_s": 0.0026967749595642088
+    },
+    "linear_svm_fhe_execute": {
+      "label": "linear_svm_fhe_execute_all_500",
+      "accuracy": 0.748,
+      "precision": 0.14814814814814814,
+      "recall": 0.6451612903225806,
+      "f1": 0.24096385542168672,
+      "confusion_matrix": [
+        [
+          354,
+          115
+        ],
+        [
+          11,
+          20
+        ]
+      ],
+      "total_time_s": 9.472277641296387,
+      "num_samples": 500,
+      "latency_per_sample_s": 0.018944555282592774,
+      "compile_time_s": 0.21754956245422363
+    }
+  },
+  "decision_tree": {
+    "decision_tree_sklearn_plaintext": {
+      "label": "decision_tree_sklearn_plaintext",
+      "accuracy": 0.736,
+      "precision": 0.13138686131386862,
+      "recall": 0.5806451612903226,
+      "f1": 0.2142857142857143,
+      "confusion_matrix": [
+        [
+          350,
+          119
+        ],
+        [
+          13,
+          18
+        ]
+      ],
+      "roc_auc": 0.6393837265286471,
+      "total_time_s": 0.00019478797912597656,
+      "num_samples": 500,
+      "latency_per_sample_s": 3.895759582519531e-07
+    },
+    "decision_tree_clear_quantized": {
+      "label": "decision_tree_clear_quantized",
+      "accuracy": 0.732,
+      "precision": 0.1347517730496454,
+      "recall": 0.6129032258064516,
+      "f1": 0.22093023255813954,
+      "confusion_matrix": [
+        [
+          347,
+          122
+        ],
+        [
+          12,
+          19
+        ]
+      ],
+      "roc_auc": 0.6510420248985488,
+      "total_time_s": 0.0064220428466796875,
+      "num_samples": 500,
+      "latency_per_sample_s": 1.2844085693359375e-05
+    },
+    "decision_tree_compile_time_s": 1.3145651817321777,
+    "decision_tree_fhe_simulate": {
+      "label": "decision_tree_fhe_simulate",
+      "accuracy": 0.732,
+      "precision": 0.1347517730496454,
+      "recall": 0.6129032258064516,
+      "f1": 0.22093023255813954,
+      "confusion_matrix": [
+        [
+          347,
+          122
+        ],
+        [
+          12,
+          19
+        ]
+      ],
+      "roc_auc": 0.6510420248985488,
+      "total_time_s": 7.973920822143555,
+      "num_samples": 500,
+      "latency_per_sample_s": 0.01594784164428711
+    },
+    "decision_tree_fhe_execute": {
+      "label": "decision_tree_fhe_execute_all_500",
+      "accuracy": 0.732,
+      "precision": 0.1347517730496454,
+      "recall": 0.6129032258064516,
+      "f1": 0.22093023255813954,
+      "confusion_matrix": [
+        [
+          347,
+          122
+        ],
+        [
+          12,
+          19
+        ]
+      ],
+      "total_time_s": 250.78010416030884,
+      "num_samples": 500,
+      "latency_per_sample_s": 0.5015602083206177,
+      "compile_time_s": 1.3145651817321777
+    }
+  },
+  "random_forest": {
+    "random_forest_sklearn_plaintext": {
+      "label": "random_forest_sklearn_plaintext",
+      "accuracy": 0.742,
+      "precision": 0.14492753623188406,
+      "recall": 0.6451612903225806,
+      "f1": 0.2366863905325444,
+      "confusion_matrix": [
+        [
+          351,
+          118
+        ],
+        [
+          11,
+          20
+        ]
+      ],
+      "roc_auc": 0.7661462273884037,
+      "total_time_s": 0.0015521049499511719,
+      "num_samples": 500,
+      "latency_per_sample_s": 3.1042098999023436e-06
+    },
+    "random_forest_clear_quantized": {
+      "label": "random_forest_clear_quantized",
+      "accuracy": 0.732,
+      "precision": 0.1347517730496454,
+      "recall": 0.6129032258064516,
+      "f1": 0.22093023255813954,
+      "confusion_matrix": [
+        [
+          347,
+          122
+        ],
+        [
+          12,
+          19
+        ]
+      ],
+      "roc_auc": 0.725944012655616,
+      "total_time_s": 0.011763811111450195,
+      "num_samples": 500,
+      "latency_per_sample_s": 2.352762222290039e-05
+    },
+    "random_forest_compile_time_s": 1.3378615379333496,
+    "random_forest_fhe_simulate": {
+      "label": "random_forest_fhe_simulate",
+      "accuracy": 0.736,
+      "precision": 0.1366906474820144,
+      "recall": 0.6129032258064516,
+      "f1": 0.2235294117647059,
+      "confusion_matrix": [
+        [
+          349,
+          120
+        ],
+        [
+          12,
+          19
+        ]
+      ],
+      "roc_auc": 0.7259784029162941,
+      "total_time_s": 8.082985877990723,
+      "num_samples": 500,
+      "latency_per_sample_s": 0.016165971755981445
+    },
+    "random_forest_fhe_execute": {
+      "label": "random_forest_fhe_execute_all_500",
+      "accuracy": 0.736,
+      "precision": 0.1366906474820144,
+      "recall": 0.6129032258064516,
+      "f1": 0.2235294117647059,
+      "confusion_matrix": [
+        [
+          349,
+          120
+        ],
+        [
+          12,
+          19
+        ]
+      ],
+      "total_time_s": 1099.381343126297,
+      "num_samples": 500,
+      "latency_per_sample_s": 2.198762686252594,
+      "compile_time_s": 1.3378615379333496
+    }
+  },
+  "xgboost": {
+    "xgboost_sklearn_plaintext": {
+      "label": "xgboost_sklearn_plaintext",
+      "accuracy": 0.938,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "confusion_matrix": [
+        [
+          469,
+          0
+        ],
+        [
+          31,
+          0
+        ]
+      ],
+      "roc_auc": 0.7981979503404637,
+      "total_time_s": 0.0024335384368896484,
+      "num_samples": 500,
+      "latency_per_sample_s": 4.867076873779297e-06
+    },
+    "xgboost_clear_quantized": {
+      "label": "xgboost_clear_quantized",
+      "accuracy": 0.938,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "confusion_matrix": [
+        [
+          469,
+          0
+        ],
+        [
+          31,
+          0
+        ]
+      ],
+      "roc_auc": 0.7822752596464682,
+      "total_time_s": 0.01162266731262207,
+      "num_samples": 500,
+      "latency_per_sample_s": 2.3245334625244142e-05
+    },
+    "xgboost_compile_time_s": 1.3936822414398193,
+    "xgboost_fhe_simulate": {
+      "label": "xgboost_fhe_simulate",
+      "accuracy": 0.938,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "confusion_matrix": [
+        [
+          469,
+          0
+        ],
+        [
+          31,
+          0
+        ]
+      ],
+      "roc_auc": 0.7824128206891808,
+      "total_time_s": 7.993270635604858,
+      "num_samples": 500,
+      "latency_per_sample_s": 0.015986541271209718
+    },
+    "xgboost_fhe_execute": {
+      "label": "xgboost_fhe_execute_all_500",
+      "accuracy": 0.938,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "confusion_matrix": [
+        [
+          469,
+          0
+        ],
+        [
+          31,
+          0
+        ]
+      ],
+      "total_time_s": 1125.996389389038,
+      "num_samples": 500,
+      "latency_per_sample_s": 2.2519927787780762,
+      "compile_time_s": 1.3936822414398193
+    }
+  },
+  "concrete_qnn": {
+    "concrete_qnn_clear_quantized": {
+      "label": "concrete_qnn_clear_quantized",
+      "accuracy": 0.938,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "confusion_matrix": [
+        [
+          469,
+          0
+        ],
+        [
+          31,
+          0
+        ]
+      ],
+      "roc_auc": 0.5,
+      "total_time_s": 0.028163433074951172,
+      "num_samples": 500,
+      "latency_per_sample_s": 5.6326866149902346e-05
+    },
+    "concrete_qnn_compile_time_s": 0.9374716281890869,
+    "concrete_qnn_fhe_simulate": {
+      "label": "concrete_qnn_fhe_simulate",
+      "accuracy": 0.938,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "confusion_matrix": [
+        [
+          469,
+          0
+        ],
+        [
+          31,
+          0
+        ]
+      ],
+      "roc_auc": 0.5,
+      "total_time_s": 3.429755210876465,
+      "num_samples": 500,
+      "latency_per_sample_s": 0.0068595104217529295
+    },
+    "concrete_qnn_fhe_execute": {
+      "label": "concrete_qnn_fhe_execute_all_500",
+      "accuracy": 0.938,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "confusion_matrix": [
+        [
+          469,
+          0
+        ],
+        [
+          31,
+          0
+        ]
+      ],
+      "total_time_s": 380.5084352493286,
+      "num_samples": 500,
+      "latency_per_sample_s": 0.7610168704986572,
+      "compile_time_s": 0.9374716281890869
+    }
+  }
+}
